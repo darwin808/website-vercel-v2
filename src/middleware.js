@@ -7,10 +7,6 @@ export async function middleware(request) {
   const isAuthenticated = await isUserAuthenticated(request);
   response.cookies.set('isAuthenticated', isAuthenticated);
 
-  // if (request.nextUrl.pathname === '/' && isAuthenticated) {
-  //   const redirectUrl = resolve(request.nextUrl.origin, '/dashboard/');
-  //   return NextResponse.redirect(redirectUrl, 302);
-  // }
   if (request.nextUrl.pathname === '/' && isAuthenticated) {
     const url = request.nextUrl.clone();
     url.pathname = '/dashboard';
