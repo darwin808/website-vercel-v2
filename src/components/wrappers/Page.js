@@ -11,16 +11,6 @@ import usePeriodicVerify from 'components/hooks/usePeriodicVerify';
 import { useZestyStore } from 'store';
 import { useFetchWrapper } from 'components/hooks/useFetchWrapper';
 import { useRouter } from 'next/router';
-import { Mulish } from 'next/font/google';
-
-const mulish = Mulish({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  fallback: ['Arial'],
-  adjustFontFallback: true,
-  display: 'swap',
-  preload: true,
-});
 
 export const useDarkMode = () => {
   const [themeMode, setThemeMode] = useState('light');
@@ -98,9 +88,7 @@ export default function Page({ children }) {
     >
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Paper elevation={0} className={mulish.className}>
-        {children}
-      </Paper>
+      <Paper elevation={0}>{children}</Paper>
     </ThemeProvider>
   );
 }
