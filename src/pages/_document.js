@@ -30,9 +30,7 @@ export default class MyDocument extends Document {
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-                    <noscript>
-            <link href={GOOGLE_FONT} rel="stylesheet" type="text/css" />
-          </noscript>
+          <link href={GOOGLE_FONT} rel="stylesheet" />
 
           <link
             rel="preload"
